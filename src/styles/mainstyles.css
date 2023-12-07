@@ -8,7 +8,10 @@
 	--h1-web: 85px;
 	--copy-web: 20px;
 	--link-web: 50px;
-	--h2-web: 30px;
+
+	--h1-tablet: 65px;
+	--copy-tablet: 15px;
+	--link-tablet: 40px;
 
 	/*Font*/
 	--h-font: 'midnight', sans-serif;
@@ -73,4 +76,17 @@ a {
 
 a:hover {
 	text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+	h1 {
+		font-size: var(--h1-tablet);
+	}
+	p {
+		font-size: var(--copy-tablet);
+		line-height: 25px;
+	}
+	a {
+		font-size: var(--link-tablet);
+	}
 }

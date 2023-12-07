@@ -45,6 +45,8 @@ import MainLayout from '../mainlayout/MainLayout.astro'
 <style>
 	section {
 		background-image: url(/ombarenimg.webp);
+		background-size: cover;
+		background-repeat: no-repeat;
 		display: flex;
 	}
 
@@ -76,7 +78,7 @@ import MainLayout from '../mainlayout/MainLayout.astro'
 	}
 
 	.linkitekst {
-		font-size: 20px;
+		font-size: var(--copy-web);
 	}
 	.overskrift {
 		display: flex;
@@ -87,5 +89,19 @@ import MainLayout from '../mainlayout/MainLayout.astro'
 		display: flex;
 		flex-direction: column;
 		gap: 30px;
+	}
+
+	@media (max-width: 1200px) {
+		.linkitekst {
+			font-size: var(--copy-tablet);
+		}
+
+		img {
+			max-width: 120px;
+		}
+
+		.overskrift {
+			gap: 100px;
+		}
 	}
 </style>

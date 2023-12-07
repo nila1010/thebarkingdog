@@ -3,7 +3,7 @@
 ---
 
 <section>
-	<article>
+	<article class="info">
 		<div>
 			<p>Sankt Hans Gade 19</p>
 			<p>2200 Nørrebro</p>
@@ -21,7 +21,7 @@
 			</div>
 		</div>
 	</article>
-	<img src="/logo/logofooter.svg" alt="The Barking Dog logo" />
+	<img class="logofooter" src="/logo/logofooter.svg" alt="The Barking Dog logo" />
 	<article>
 		<p>Åbningstider</p>
 		<div>
@@ -29,8 +29,8 @@
 			<p>Tir - tor: 16:00 - 01:00</p>
 			<p>Fre - lør: 16:00 - 02:00</p>
 			<div class="somelogo">
-				<a href="/#"><img src="/logo/facelogo.svg" alt="Link til facebook" /></a>
-				<a href="/#"><img src="/logo/instalogo.svg" alt="Link til Instagram" /></a>
+				<a class="logosome" href="/#"><img src="/logo/facelogo.svg" alt="Link til facebook" /></a>
+				<a class="logosome" href="/#"><img src="/logo/instalogo.svg" alt="Link til Instagram" /></a>
 			</div>
 		</div>
 	</article>
@@ -60,20 +60,30 @@
 			max-width: 28ch;
 		}
 
-		img {
-			width: 25%;
+		.logofooter {
+			width: 332px;
 		}
 
 		.somelogo {
 			margin-top: 20px;
 			display: flex;
-			justify-content: center;
+			gap: 30px;
+		}
+
+		.logosome {
+			width: 40px;
 		}
 
 		.visit {
 			margin-top: 15px;
 			display: flex;
 			gap: 40px;
+		}
+
+		@media (max-width: 689px) {
+			.info {
+				margin-left: 90px;
+			}
 		}
 	</style>
 </section>

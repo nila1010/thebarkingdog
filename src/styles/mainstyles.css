@@ -1,0 +1,71 @@
+:root {
+	/* Color styles */
+	--text-color-primary: #fff5d7;
+	--background-color-primary: #35404a;
+	--link-color-hover: #c46259;
+
+	/* Text-size styles */
+	--h1-web: 85px;
+	--copy-web: 20px;
+	--link-web: 50px;
+	--h2-web: 30px;
+
+	/*Font*/
+	--h-font: 'midnight', sans-serif;
+	--p-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+		'Helvetica Neue', sans-serif;
+}
+
+@font-face {
+	font-family: 'midnight';
+	src: url('/font/Blackout-Midnight.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main {
+	flex-grow: 1;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+h1 {
+	font-family: 'midnight', sans-serif;
+	font-size: var(--h1-web);
+	color: var(--text-color-primary);
+}
+
+h2 {
+	font-family: 'midnight', sans-serif;
+	font-size: var(--h1-web);
+	color: var(--text-color-primary);
+}
+
+p {
+	font-family: var(--p-font);
+	font-size: var(--copy-web);
+	color: var(--text-color-primary);
+	max-width: 65ch;
+}
+
+a {
+	font-family: 'midnight', sans-serif;
+	font-size: var(--link-web);
+	color: var(--link-color-hover);
+}

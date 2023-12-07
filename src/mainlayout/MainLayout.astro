@@ -1,5 +1,7 @@
 ---
-
+import '../styles/mainstyles.css'
+import Navigation from '../components/Navigation.astro'
+import Footer from '../components/Footer.astro'
 ---
 
 <html lang="da">
@@ -11,10 +13,10 @@
 		<title>The Barking Dog</title>
 	</head>
 	<body>
-		<header></header>
+		<header><Navigation /></header>
 		<main>
 			<slot />
 		</main>
-		<footer></footer>
+		<footer><Footer /></footer>
 	</body>
 </html>

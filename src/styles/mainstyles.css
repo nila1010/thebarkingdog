@@ -62,6 +62,7 @@ p {
 	font-size: var(--copy-web);
 	color: var(--text-color-primary);
 	max-width: 65ch;
+	line-height: 27px;
 }
 
 a {

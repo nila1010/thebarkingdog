@@ -1,0 +1,43 @@
+---
+const { active } = Astro.props
+---
+
+<nav>
+	<img src="/logo/logonav.svg" alt="The Barking Dog logo" />
+	<article>
+		<a class={active} href="/ombaren">Om Baren</a><a class={active} href="/booking">Booking</a><a
+			class={active}
+			href="/menu">Menukort</a
+		><a class={active} href="/kontakt">Kontakt</a>
+	</article>
+</nav>
+
+<style>
+	nav {
+		display: flex;
+		background-color: var(--background-color-primary);
+		padding: 30px 50px;
+		justify-content: space-between;
+	}
+
+	article {
+		display: flex;
+		gap: 40px;
+	}
+
+	img {
+		max-width: 12%;
+	}
+
+	a {
+		font-size: 35px;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	.active {
+		text-decoration: underline;
+	}
+</style>

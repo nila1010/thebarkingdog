@@ -1,0 +1,30 @@
+---
+const { data } = Astro.props
+---
+
+<article>
+	<div>
+		<div class="flextitle">
+			<h2>{data.navndrink}</h2>
+			<h2>{data.pris}</h2>
+		</div>
+		<h3>{data.beskrivelse}</h3>
+	</div>
+	<p>{data.tekst}</p>
+</article>
+
+<style>
+	article {
+		display: flex;
+		flex-direction: column;
+	}
+	p {
+		color: var(--background-color-primary);
+		font-size: 14px;
+		line-height: 16px;
+	}
+	.flextitle {
+		display: flex;
+		justify-content: space-between;
+	}
+</style>

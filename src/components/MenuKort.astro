@@ -1,30 +1,65 @@
 ---
-const { data } = Astro.props
+const response1 = await fetch('https://vdmmsfhwyenonuczxxlg.supabase.co/rest/v1/menukort', {
+	method: 'GET',
+	headers: {
+		apikey:
+			'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZkbW1zZmh3eWVub251Y3p4eGxnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDIwMjU3OTQsImV4cCI6MjAxNzYwMTc5NH0.o9ue87z_nRxD0pgEX3Dfl3tS4iG8BY_1Sao3mkZcugs'
+	}
+})
+const data = await response1.json()
+
+const response2 = await fetch('https://vdmmsfhwyenonuczxxlg.supabase.co/rest/v1/menukort2', {
+	method: 'GET',
+	headers: {
+		apikey:
+			'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZkbW1zZmh3eWVub251Y3p4eGxnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDIwMjU3OTQsImV4cCI6MjAxNzYwMTc5NH0.o9ue87z_nRxD0pgEX3Dfl3tS4iG8BY_1Sao3mkZcugs'
+	}
+})
+const data2 = await response2.json()
+
+import MenuIndhold from './MenuIndhold.astro'
 ---
 
-<article>
-	<div>
-		<div class="flextitle">
-			<h2>{data.navndrink}</h2>
-			<h2>{data.pris}</h2>
-		</div>
-		<h3>{data.beskrivelse}</h3>
-	</div>
-	<p>{data.tekst}</p>
-</article>
+<section>
+	<h1 class="colorh1">Coc</h1>
+	<h1>ktai</h1>
+	<h1>ls</h1>
+	{
+		data.map((text) => {
+			return <MenuIndhold data={text} />
+		})
+	}
+	<img src="/logo/pil.svg" alt="Næste side" />
+</section>
 
 <style>
-	article {
+	section {
+		position: relative;
+		margin: 40rem auto 10rem auto;
+		grid-column: 1;
+		grid-row: 1;
 		display: flex;
 		flex-direction: column;
+		gap: 70px;
+		background-color: #fff5d7;
+		max-width: 550px;
+		padding: 0 20px 80px 20px;
+		border-radius: 30px;
 	}
-	p {
+
+	h1 {
 		color: var(--background-color-primary);
-		font-size: 14px;
-		line-height: 16px;
+		line-height: 0px;
 	}
-	.flextitle {
-		display: flex;
-		justify-content: space-between;
+	.colorh1 {
+		margin-top: 60px;
+		color: var(--text-color-alternativ);
+	}
+
+	img {
+		position: absolute;
+		width: 8%;
+		bottom: 15px;
+		right: 30px;
 	}
 </style>

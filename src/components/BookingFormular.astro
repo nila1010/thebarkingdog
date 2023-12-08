@@ -1,0 +1,102 @@
+---
+
+---
+
+<section>
+	<article>
+		<div class="flexoverskrift">
+			<img src="/logo/snerleleft.svg" alt="snerle grafik" />
+			<h1>Booking</h1>
+			<img src="/logo/snerleright.svg" alt="snerle grafik" />
+		</div>
+		<p>Book dit bord her, ved at udfylde formularen!</p>
+	</article>
+	<form name="Booking" netlify>
+		<label for="name"> Navn</label>
+		<input id="name" name="Navn" placeholder="Navn" type="text" required />
+		<label for="email"> Email</label>
+		<input id="email" name="Email" placeholder="Email" type="email" required />
+		<label for="dato"> Dato</label>
+		<input id="dato" name="Dato" placeholder="Dato" type="date" required />
+		<label for="tid"> Tid</label>
+		<input id="tid" name="Tid" placeholder="Tid" type="time" required />
+		<label for="antal"> Antal personer</label>
+		<input id="antal" name="Antal personer" placeholder="Antal personer" type="number" required />
+		<textarea id="text" placeholder="Evt.bemærkninger"></textarea>
+		<button type="submit">SEND</button>
+	</form>
+</section>
+
+<style>
+	section {
+		grid-column: 1;
+		grid-row: 1;
+		background-color: var(--background-color-primary);
+		max-width: 550px;
+		margin: 40rem auto 10rem auto;
+		padding: 0 20px 80px 20px;
+		border-radius: 30px;
+	}
+
+	div {
+		min-width: 400px;
+		display: flex;
+		justify-content: center;
+		gap: 30px;
+	}
+
+	img {
+		max-width: 150px;
+		margin-top: 35px;
+	}
+
+	h1 {
+		margin-left: 8px;
+	}
+
+	label {
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		position: absolute;
+	}
+
+	form {
+		margin-top: 50px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	input {
+		padding: 15px;
+		border-radius: 20px;
+		height: 40px;
+		background-color: #fff5d7;
+		color: #35404a;
+	}
+
+	input::placeholder {
+		color: #35404a;
+	}
+
+	textarea {
+		padding: 15px;
+		border-radius: 20px;
+		height: 150px;
+		background-color: #fff5d7;
+		color: #35404a;
+	}
+
+	textarea::placeholder {
+		color: #35404a;
+	}
+
+	button {
+		background-color: #fff5d7;
+		border-radius: 20px;
+		font-family: var(--h-font);
+		font-size: 35px;
+		color: #35404a;
+	}
+</style>

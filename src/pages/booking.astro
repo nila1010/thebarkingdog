@@ -1,0 +1,45 @@
+---
+import MainLayout from '../mainlayout/MainLayout.astro'
+import Content from '../components/Content.astro'
+---
+
+<MainLayout>
+	<section>
+		<Content
+			over1="Book"
+			over2="Ing"
+			text1="Vi er glade for at kunne tilbyde bordreservation for grupper mellem 5 og maksimalt 10 personer! "
+			text2="Hvis I er en mindre gruppe, anbefaler vi blot at kigge forbi om aftenen. "
+			text3="Kom ned og prøv vores udvalg, vi hjælper dig gerne med at træffe en beslutning baseret på dine præferencer! Og husk: Vi kører Happy Hour alle dage fra 16:00-18:00. Udfyld venligst formularen for bordreservation, senest klokken 16:00 samme dag."
+			textboks="true"
+			text4="Seneste reservations tid er klokken 21:00. Vi glæder os til at se jer!"
+		>
+			<img src="/logo/hjerte.svg" alt="hjerte grafik" />
+		</Content>
+	</section>
+</MainLayout>
+
+<style>
+	section {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		background-image: url(/booking.webp);
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	img {
+		max-width: 140px;
+		animation-name: puls;
+		animation-delay: 0.5s;
+		animation-duration: 3s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
+
+	@keyframes puls {
+		50% {
+			transform: scale(1.1);
+		}
+	}
+</style>

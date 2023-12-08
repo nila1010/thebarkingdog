@@ -18,15 +18,15 @@ import Content from '../components/Content.astro'
 		<Content
 			over1="Menu"
 			over2="kort"
-			grafikimg="/logo/diamant.svg"
 			text1="Agave spiritus har altid være en kæmpe passion for os, og startede allerede da det var vores foretrukne spiritus i vores teenageår. Vi fokuserer hovedsageligt på tequila og mazcal!"
 			text2="Der findes ingen regler for os når vi skal lave drinks. Vi lader os hele tiden inspirere og udvikler os som inspirationen opstår. Det er så nemt at gå i de samme mønstre, så når vi laver et nyt menukort, smider vi en ingrediens ud, for at udfordre os selv. "
 			text3="Kom ned og prøv vores udvalg, vi hjælper dig gerne med at træffe en beslutning baseret på dine præferencer! Og husk: Vi kører Happy Hour alle dage fra 16:00-18:00!"
-			grafikimgalt="Diamant logo"
 			linkboks="true"
 			link="booking"
 			linktekst="Book Bord"
-		/>
+		>
+			<img src="/logo/diamant.svg" alt="Diamant" />
+		</Content>
 		<section class="kortsection">
 			<h1 class="colorh1">Coc</h1>
 			<h1>ktai</h1>
@@ -73,5 +73,37 @@ import Content from '../components/Content.astro'
 	.kortsection .colorh1 {
 		margin-top: 60px;
 		color: var(--text-color-alternativ);
+	}
+
+	/*ANIMATION*/
+	img {
+		position: absolute;
+		top: -23%;
+		left: 50px;
+		max-width: 83px;
+		animation-name: rul;
+		animation-delay: 0.5s;
+		animation-duration: 2s;
+		animation-timing-function: linear;
+		animation-fill-mode: forwards;
+		animation-iteration-count: 1;
+	}
+
+	@keyframes rul {
+		10% {
+			transform: translate(0, 190%);
+		}
+		30% {
+			transform: translate(80%, 150%) rotate(180deg);
+		}
+		50% {
+			transform: translate(200%, 280%) rotate(360deg);
+		}
+		80% {
+			transform: translate(300%, 200%) rotate(600deg) scale(1.3);
+		}
+		100% {
+			transform: translate(450%, 330%) rotate(720deg) scale(1.8);
+		}
 	}
 </style>

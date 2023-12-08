@@ -4,14 +4,11 @@
 
 <section>
 	<article>
-		<div class="flexoverskrift">
-			<img src="/logo/snerleleft.svg" alt="snerle grafik" />
-			<h1>Booking</h1>
-			<img src="/logo/snerleright.svg" alt="snerle grafik" />
-		</div>
+		<h1>Booking</h1>
+		<img src="/logo/snerleskull.svg" alt="snerle grafik" />
 		<p>Book dit bord her, ved at udfylde formularen!</p>
 	</article>
-	<form name="Booking" netlify>
+	<form name="Booking" method="post" netlify>
 		<label for="name"> Navn</label>
 		<input id="name" name="Navn" placeholder="Navn" type="text" required />
 		<label for="email"> Email</label>
@@ -38,16 +35,14 @@
 		border-radius: 30px;
 	}
 
-	div {
-		min-width: 400px;
+	article {
 		display: flex;
-		justify-content: center;
-		gap: 30px;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	img {
-		max-width: 150px;
-		margin-top: 35px;
+		max-width: 200px;
 	}
 
 	h1 {

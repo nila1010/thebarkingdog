@@ -3,8 +3,14 @@ const { active } = Astro.props
 ---
 
 <nav>
-	<img src="/logo/logonav.svg" alt="The Barking Dog logo" />
-	<article>
+	<a href="/index"><img src="/logo/logonav.svg" alt="The Barking Dog logo" /></a>
+	<div id="burger">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+	<article class="navdispno">
 		<a class={active} href="/ombaren">Om Baren</a><a class={active} href="/booking">Booking</a><a
 			class={active}
 			href="/menu">Menukort</a
@@ -65,5 +71,122 @@ const { active } = Astro.props
 	}
 
 	@media (max-width: 750px) {
+		img {
+			margin: 20px;
+			width: 100px;
+		}
+		/*BURGER MENU*/
+		nav {
+			padding: 0;
+		}
+		.navdispno {
+			display: none;
+		}
+
+		article {
+			background-color: aqua;
+			position: absolute;
+			width: 100%;
+			height: 480px;
+
+			z-index: 10;
+			padding-top: 80px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 1px;
+			background-color: #fff5d7;
+			animation-name: falling_kf;
+			animation-duration: 0.8s;
+			animation-fill-mode: backwards;
+			animation-timing-function: ease-in-out;
+		}
+		a {
+			font-size: 60px;
+		}
+
+		@keyframes falling_kf {
+			from {
+				transform: translate(0, -100%);
+			}
+
+			to {
+				transform: translate(0);
+			}
+		}
+
+		#burger {
+			display: block;
+			width: 50px;
+			height: 60px;
+			position: relative;
+			transition: 0.5s ease-in-out;
+			z-index: 11;
+			margin: 10px 20px;
+		}
+
+		#burger span {
+			display: block;
+			position: absolute;
+			height: 5px;
+			width: 100%;
+			border-radius: 5px;
+			background: #c46259;
+			transition: 0.25s ease-in-out;
+		}
+
+		#burger span:nth-child(1) {
+			top: 10px;
+		}
+
+		#burger span:nth-child(2),
+		#burger span:nth-child(3) {
+			top: 25px;
+		}
+
+		#burger span:nth-child(4) {
+			top: 40px;
+		}
+
+		#burger.open span:nth-child(1) {
+			top: 15px;
+			width: 0%;
+			left: 50%;
+		}
+
+		#burger.open span:nth-child(2) {
+			transform: rotate(45deg);
+			top: 26px;
+		}
+
+		#burger.open span:nth-child(3) {
+			transform: rotate(-45deg);
+			top: 26px;
+		}
+
+		#burger.open span:nth-child(4) {
+			top: 15px;
+			width: 0%;
+			left: 50%;
+		}
 	}
 </style>
+
+<script>
+	const ikon = document.querySelector('#burger')
+	const disp = document.querySelector('article')
+
+	ikon.addEventListener('click', openClose)
+
+	function openClose() {
+		ikon.classList.toggle('open')
+		const ikonShown = ikon.classList.contains('open')
+		if (ikonShown) {
+			ikon.classList.add('open')
+			disp.classList.remove('navdispno')
+		} else {
+			ikon.classList.remove('open')
+			disp.classList.add('navdispno')
+		}
+	}
+</script>

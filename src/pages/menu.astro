@@ -1,0 +1,157 @@
+---
+const response = await fetch('https://vdmmsfhwyenonuczxxlg.supabase.co/rest/v1/menukort', {
+	method: 'GET',
+	headers: {
+		apikey:
+			'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZkbW1zZmh3eWVub251Y3p4eGxnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDIwMjU3OTQsImV4cCI6MjAxNzYwMTc5NH0.o9ue87z_nRxD0pgEX3Dfl3tS4iG8BY_1Sao3mkZcugs'
+	}
+})
+const data = await response.json()
+
+import MainLayout from '../mainlayout/MainLayout.astro'
+import MenuKort from '../components/MenuKort.astro'
+---
+
+<MainLayout>
+	<section class="layout">
+		<section class="indholdsection">
+			<div class="spacer"></div>
+			<article>
+				<div class="overskrift">
+					<div>
+						<h1>Menu</h1>
+						<h1>kort</h1>
+					</div>
+					<img src="/logo/hjerte.svg.svg" alt="diamant logo" />
+				</div>
+				<div class="text">
+					<p>
+						Agave spiritus har altid været en kæmpe passion for os, og startede allerede da det var
+						vores foretrukne spiritus i vores teenageår. Vi fokuserer hovedsageligt på tequila og
+						mezcal!
+					</p>
+					<p>
+						Der findes ingen regler for os når vi skal lave drinks. Vi lader os hele tiden inspirere
+						og udvikler os som inspirationen opstår. Det er så nemt at gå i de samme mønstre, så når
+						vi laver et nyt menukort, smider vi en ingrediens ud, for at udfordre os selv.
+					</p>
+					<p>
+						Kom ned og prøv vores udvalg, vi hjælper dig gerne med at træffe en beslutning baseret
+						på dine præferencer! Og husk: Vi kører Happy Hour alle dage fra 16:00-18:00!
+					</p>
+				</div>
+				<a href="/booking">Book Bord</a>
+			</article>
+		</section>
+		<section class="kortsection">
+			<h1 class="colorh1">Coc</h1>
+			<h1>ktai</h1>
+			<h1>ls</h1>
+
+			{
+				data.map((text) => {
+					return <MenuKort data={text} />
+				})
+			}
+		</section>
+	</section>
+</MainLayout>
+
+<style>
+	/*LAYOUT SECTION*/
+	.layout {
+		position: relative;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		background-image: url(/ombarenimg.webp);
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	/*INDHOLD SECTION*/
+	.indholdsection {
+		grid-column: 1/3;
+		grid-row: 1;
+		display: flex;
+	}
+
+	article {
+		background-color: var(--background-color-primary);
+		padding: 0 50px 50px 50px;
+		margin-bottom: 180px;
+		display: flex;
+		flex-grow: 1;
+		flex-direction: column;
+		gap: 50px;
+		height: fit-content;
+	}
+
+	img {
+		max-width: 150px;
+	}
+
+	.spacer {
+		background-color: var(--background-color-primary);
+		height: 220px;
+		width: 80%;
+	}
+	.imgh1 {
+		max-width: 150px;
+	}
+
+	.indholdsection h1 {
+		line-height: 80px;
+	}
+
+	.linkitekst {
+		font-size: var(--copy-web);
+	}
+	.overskrift {
+		display: flex;
+		gap: 150px;
+	}
+
+	.text {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	@media (max-width: 1200px) {
+		.linkitekst {
+			font-size: var(--copy-tablet);
+		}
+
+		img {
+			max-width: 120px;
+		}
+
+		.overskrift {
+			gap: 100px;
+		}
+	}
+
+	/*KORT SECTION*/
+
+	.kortsection {
+		margin: 40rem auto 10rem auto;
+		grid-column: 1;
+		grid-row: 1;
+		display: flex;
+		flex-direction: column;
+		gap: 70px;
+		background-color: #fff5d7;
+		max-width: 550px;
+		padding: 0 20px 80px 20px;
+		border-radius: 30px;
+	}
+
+	.kortsection h1 {
+		color: var(--background-color-primary);
+		line-height: 0px;
+	}
+	.kortsection .colorh1 {
+		margin-top: 60px;
+		color: var(--text-color-alternativ);
+	}
+</style>

@@ -1,11 +1,14 @@
 :root {
 	/* Color styles */
 	--text-color-primary: #fff5d7;
+	--text-color-alternativ: #31c0cc;
 	--background-color-primary: #35404a;
 	--link-color-hover: #c46259;
 
 	/* Text-size styles */
 	--h1-web: 85px;
+	--h2-web: 40px;
+	--h3-web: 20px;
 	--copy-web: 20px;
 	--link-web: 50px;
 
@@ -41,6 +44,7 @@ body {
 
 main {
 	flex-grow: 1;
+	position: relative;
 }
 
 img {
@@ -55,9 +59,17 @@ h1 {
 }
 
 h2 {
-	font-family: 'midnight', sans-serif;
-	font-size: var(--h1-web);
-	color: var(--text-color-primary);
+	font-family: var(--p-font);
+	font-size: var(--h2-web);
+	font-weight: bold;
+	color: var(--background-color-primary);
+}
+
+h3 {
+	font-family: var(--p-font);
+	font-size: var(--h3-web);
+	font-weight: bold;
+	color: var(--background-color-primary);
 }
 
 p {

@@ -34,11 +34,11 @@ import Content from '../components/Content.astro'
 		grid-row: 1;
 	}
 	.grafikimg {
-		position: absolute;
+		max-width: 150px;
+		/*position: absolute;
 		top: -23%;
 		left: 50px;
-		max-width: 83px;
-		animation-name: rul;
+		animation-name: rul;*/
 		animation-delay: 0.5s;
 		animation-duration: 2s;
 		animation-timing-function: linear;
@@ -61,6 +61,18 @@ import Content from '../components/Content.astro'
 		}
 		100% {
 			transform: translate(450%, 330%) rotate(720deg) scale(1.8);
+		}
+	}
+
+	@media (max-width: 750px) {
+		.baggrundimg {
+			margin: 0;
+			grid-row: 2;
+		}
+	}
+	@media (max-width: 500px) {
+		.grafikimg {
+			max-width: 80px;
 		}
 	}
 </style>

@@ -84,12 +84,51 @@ const { over1, over2, text1, text2, text3, text4, link, linktekst, textboks, lin
 			font-size: var(--copy-tablet);
 		}
 
-		img {
-			max-width: 120px;
+		.overskrift {
+			gap: 100px;
+		}
+	}
+
+	@media (max-width: 1000px) {
+		.overskrift {
+			gap: 60px;
+		}
+	}
+
+	@media (max-width: 750px) {
+		section {
+			display: grid;
+			grid-template-columns: 1fr;
+		}
+
+		article {
+			grid-column: 1;
+			border-bottom-left-radius: 30px;
+			border-bottom-right-radius: 30px;
+		}
+		a {
+			text-align: center;
 		}
 
 		.overskrift {
-			gap: 100px;
+			justify-content: flex-end;
+		}
+	}
+
+	@media (max-width: 500px) {
+		h1 {
+			line-height: 50px;
+		}
+
+		article {
+			gap: 20px;
+		}
+		.overskrift {
+			justify-content: flex-start;
+		}
+
+		.text {
+			gap: 20px;
 		}
 	}
 </style>

@@ -13,8 +13,12 @@
 	--link-web: 50px;
 
 	--h1-tablet: 65px;
+	--h2-tablet: 30px;
+	--h3-tablet: 16px;
 	--copy-tablet: 15px;
 	--link-tablet: 40px;
+
+	--h1-mobil: 40px;
 
 	/*Font*/
 	--h-font: 'midnight', sans-serif;
@@ -97,11 +101,26 @@ a:hover {
 	h1 {
 		font-size: var(--h1-tablet);
 	}
+
+	h2 {
+		font-size: var(--h2-tablet);
+	}
+
+	h3 {
+		font-size: var(--h3-tablet);
+	}
+
 	p {
 		font-size: var(--copy-tablet);
 		line-height: 25px;
 	}
 	a {
 		font-size: var(--link-tablet);
+	}
+}
+
+@media (max-width: 500px) {
+	h1 {
+		font-size: var(--h1-mobil);
 	}
 }

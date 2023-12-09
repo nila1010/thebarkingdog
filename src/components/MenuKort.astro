@@ -21,9 +21,11 @@ import MenuIndhold from './MenuIndhold.astro'
 ---
 
 <section>
-	<h1 class="colorh1">Coc</h1>
-	<h1>ktai</h1>
-	<h1>ls</h1>
+	<div>
+		<h1 class="colorh1">Coc</h1>
+		<h1>ktai</h1>
+		<h1>ls</h1>
+	</div>
 	{
 		data.map((text) => {
 			return <MenuIndhold data={text} />
@@ -37,22 +39,22 @@ import MenuIndhold from './MenuIndhold.astro'
 		position: relative;
 		grid-column: 1;
 		grid-row: 1;
-		margin: 40rem 35rem 4rem 2rem;
+		margin: 40rem 31rem 4rem 2rem;
 		display: flex;
 		flex-direction: column;
 		gap: 70px;
 		background-color: #fff5d7;
-		max-width: 550px;
+		max-width: 600px;
 		padding: 0 20px 80px 20px;
 		border-radius: 30px;
 	}
 
 	h1 {
 		color: var(--background-color-primary);
-		line-height: 0px;
+		line-height: 80px;
 	}
 	.colorh1 {
-		margin-top: 60px;
+		margin-top: 40px;
 		color: var(--text-color-alternativ);
 	}
 
@@ -61,5 +63,45 @@ import MenuIndhold from './MenuIndhold.astro'
 		width: 8%;
 		bottom: 15px;
 		right: 30px;
+	}
+
+	@media (max-width: 1200px) {
+		section {
+			gap: 30px;
+		}
+		h1 {
+			line-height: 60px;
+		}
+		.colorh1 {
+			margin-top: 30px;
+		}
+	}
+
+	@media (max-width: 850px) {
+		section {
+			margin-right: 25rem;
+		}
+	}
+
+	@media (max-width: 700px) {
+		section {
+			max-width: 350px;
+		}
+	}
+
+	@media (max-width: 750px) {
+		section {
+			grid-row: 2;
+			margin: -60% auto 0 auto;
+		}
+	}
+
+	@media (max-width: 500px) {
+		h1 {
+			line-height: 40px;
+		}
+		.colorh1 {
+			margin-top: 20px;
+		}
 	}
 </style>

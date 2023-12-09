@@ -21,37 +21,47 @@ import Content from '../components/Content.astro'
 		</Content>
 		<MenuKort />
 	</section>
-
-	<style>
-		section {
-			display: grid;
-			grid-template-columns: 1fr;
-		}
-		.baggrundimg {
-			margin-top: 13.7rem;
-			grid-column: 1/3;
-			grid-row: 1;
-		}
-		.grafikimg {
-			max-width: 140px;
-			opacity: 0%;
-			animation-name: vis;
-			animation-delay: 0.5s;
-			animation-duration: 2s;
-			animation-timing-function: linear;
-			animation-fill-mode: forwards;
-			animation-iteration-count: 1;
-		}
-
-		@keyframes vis {
-			60% {
-				opacity: 80%;
-				transform: scale(1.1);
-			}
-			100% {
-				opacity: 100%;
-				transform: scale(1);
-			}
-		}
-	</style>
 </MainLayout>
+<style>
+	section {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+	.baggrundimg {
+		margin-top: 13.7rem;
+		grid-column: 1/3;
+		grid-row: 1;
+	}
+	.grafikimg {
+		max-width: 140px;
+		opacity: 0%;
+		animation-name: vis;
+		animation-delay: 0.5s;
+		animation-duration: 2s;
+		animation-timing-function: linear;
+		animation-fill-mode: forwards;
+		animation-iteration-count: 1;
+	}
+
+	@keyframes vis {
+		60% {
+			opacity: 80%;
+			transform: scale(1.1);
+		}
+		100% {
+			opacity: 100%;
+			transform: scale(1);
+		}
+	}
+	@media (max-width: 750px) {
+		.baggrundimg {
+			margin: 0;
+			grid-row: 2;
+		}
+	}
+	@media (max-width: 500px) {
+		.grafikimg {
+			max-width: 80px;
+		}
+	}
+</style>

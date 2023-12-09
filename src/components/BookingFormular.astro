@@ -30,7 +30,7 @@
 		grid-row: 1;
 		background-color: var(--background-color-primary);
 		max-width: 550px;
-		margin: 30rem 40rem 4rem 2rem;
+		margin: 30rem 35rem 4rem 3rem;
 		padding: 0 20px 80px 20px;
 		border-radius: 30px;
 	}
@@ -93,5 +93,17 @@
 		font-family: var(--h-font);
 		font-size: 35px;
 		color: #35404a;
+	}
+
+	@media (max-width: 750px) {
+		section {
+			grid-row: 2;
+			margin: -60% auto 0 auto;
+		}
+	}
+	@media (max-width: 500px) {
+		h1 {
+			padding-top: 30px;
+		}
 	}
 </style>

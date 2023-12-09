@@ -16,25 +16,23 @@ import Content from '../components/Content.astro'
 			link="booking"
 			linktekst="Book Bord"
 		>
-			<img src="/logo/skull.svg" alt="skull grafik" />
+			<img class="grafikimg" slot="grafik" src="/logo/skull.svg" alt="skull grafik" />
+			<img class="baggrundimg" slot="baggrund" src="menu.webp" alt="baggrunds billede" />
 		</Content>
 		<MenuKort />
 	</section>
 
 	<style>
-		/*LAYOUT SECTION*/
 		section {
 			display: grid;
-			grid-template-columns: 1fr 1fr;
-			background-image: url(/menukort.webp);
-			background-size: cover;
-			background-repeat: no-repeat;
+			grid-template-columns: 1fr;
 		}
-
-		/*KORT SECTION*/
-
-		/*ANIMATION*/
-		img {
+		.baggrundimg {
+			margin-top: 13.7rem;
+			grid-column: 1/3;
+			grid-row: 1;
+		}
+		.grafikimg {
 			max-width: 140px;
 			opacity: 0%;
 			animation-name: vis;

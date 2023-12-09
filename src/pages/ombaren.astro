@@ -17,18 +17,23 @@ import Content from '../components/Content.astro'
 			link="/booking"
 			linktekst="Book Bord"
 		>
-			<img src="/logo/diamant.svg" alt="diamant grafik" />
+			<img class="grafikimg" slot="grafik" src="/logo/diamant.svg" alt="diamant grafik" />
+			<img class="baggrundimg" slot="baggrund" src="/ombaren.webp" alt="" />
 		</Content>
 	</section>
 </MainLayout>
 
 <style>
 	section {
-		background-image: url(/ombaren.webp);
-		background-size: contain;
-		background-repeat: no-repeat;
+		max-height: 1200px;
+		overflow: hidden;
 	}
-	img {
+	.baggrundimg {
+		margin-top: 13.7rem;
+		grid-column: 1/3;
+		grid-row: 1;
+	}
+	.grafikimg {
 		position: absolute;
 		top: -23%;
 		left: 50px;

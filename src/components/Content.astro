@@ -4,14 +4,15 @@ const { over1, over2, text1, text2, text3, text4, link, linktekst, textboks, lin
 ---
 
 <section>
-	<div class="spacer"></div>
+	<slot name="baggrund" />
+
 	<article>
 		<div class="overskrift">
 			<div>
 				<h1>{over1}</h1>
 				<h1>{over2}</h1>
 			</div>
-			<slot />
+			<slot name="grafik" />
 		</div>
 		<div class="text">
 			<p>
@@ -31,27 +32,24 @@ const { over1, over2, text1, text2, text3, text4, link, linktekst, textboks, lin
 
 <style>
 	section {
-		display: flex;
-		grid-column: 1/3;
 		grid-row: 1;
+		grid-column: 1;
+		display: grid;
+		grid-template-columns: 55% 45%;
 	}
 
 	article {
-		position: relative;
 		background-color: var(--background-color-primary);
+		position: relative;
+		height: fit-content;
+		border-bottom-left-radius: 30px;
 		padding: 0 50px 50px 50px;
-		margin-bottom: 180px;
+		grid-column: 2/3;
+		grid-row: 1;
+		z-index: 5;
 		display: flex;
-		flex-grow: 1;
 		flex-direction: column;
 		gap: 50px;
-		height: fit-content;
-	}
-
-	.spacer {
-		background-color: var(--background-color-primary);
-		height: 220px;
-		width: 80%;
 	}
 
 	h1 {

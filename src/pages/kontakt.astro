@@ -1,0 +1,148 @@
+---
+import MainLayout from '../mainlayout/MainLayout.astro'
+---
+
+<MainLayout>
+	<section>
+		<img class="baggrundimg" src="/kontakt.webp" alt="baggrunds billede" />
+		<article>
+			<div class="overskrift">
+				<div>
+					<h1>Kont</h1>
+					<h1>Akt</h1>
+				</div>
+				<img class="grafik" src="/logo/snerleright.svg" alt="grafik logo" />
+			</div>
+			<div class="text">
+				<div>
+					<p>Sankt Hans Gade 19</p>
+					<p>2200 Nørrebro</p>
+				</div>
+				<div>
+					<p>+45 35 36 16 00</p>
+					<p><a class="linktekst" href="mailto:info@thebarkingdog.dk">info@thebarkingdog.dk</a></p>
+				</div>
+				<div>
+					<h2>Åbningstider</h2>
+					<div class="tider">
+						<div>
+							<p>Mandag</p>
+							<p>Tirsdag</p>
+							<p>Onsdag</p>
+							<p>Torsdag</p>
+							<p>Fredag</p>
+							<p>Lørdag</p>
+							<p>Søndag</p>
+						</div>
+						<div>
+							<p>Lukket</p>
+							<p>16:00-01:00</p>
+							<p>16:00-01:00</p>
+							<p>16:00-01:00</p>
+							<p>16:00-02:00</p>
+							<p>16:00-02:00</p>
+							<p>Lukket</p>
+						</div>
+					</div>
+				</div>
+				<div class="linkgrafik">
+					<a href="/booking">Book Bord</a>
+					<img class="grafik" src="/logo/snerleleft.svg" alt="grafik logo" />
+				</div>
+			</div>
+		</article>
+	</section>
+</MainLayout>
+
+<style>
+	section {
+		max-height: 1200px;
+		overflow: hidden;
+		grid-row: 1;
+		grid-column: 1;
+		display: grid;
+		grid-template-columns: 55% 45%;
+	}
+
+	article {
+		background-color: var(--background-color-primary);
+		position: relative;
+		height: fit-content;
+		border-bottom-left-radius: 30px;
+		padding: 0 50px 50px 50px;
+		grid-column: 2/3;
+		grid-row: 1;
+		z-index: 5;
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+	}
+
+	h1 {
+		line-height: 80px;
+	}
+
+	h2 {
+		color: var(--text-color-primary);
+	}
+	.baggrundimg {
+		margin-top: 13.7rem;
+		grid-column: 1/3;
+		grid-row: 1;
+	}
+
+	.grafik {
+		width: 150px;
+	}
+
+	.overskrift {
+		display: flex;
+		gap: 150px;
+	}
+
+	.text {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		opacity: 0%;
+		animation-name: show;
+		animation-delay: 0.5s;
+		animation-duration: 3s;
+		animation-timing-function: linear;
+		animation-fill-mode: forwards;
+	}
+
+	.linktekst {
+		font-size: var(--copy-web);
+	}
+
+	.tider {
+		display: flex;
+		gap: 40px;
+	}
+
+	.linkgrafik {
+		display: flex;
+		gap: 100px;
+	}
+
+	@keyframes show {
+		100% {
+			opacity: 100%;
+		}
+	}
+
+	@media (max-width: 1200px) {
+		.linkitekst {
+			font-size: var(--copy-tablet);
+		}
+
+		img {
+			max-width: 120px;
+		}
+
+		.overskrift {
+			gap: 100px;
+		}
+	}
+</style>

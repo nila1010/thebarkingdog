@@ -20,7 +20,7 @@ import MainLayout from '../mainlayout/MainLayout.astro'
 						<p>2200 Nørrebro</p>
 					</div>
 					<div>
-						<p>+45 35 36 16 00</p>
+						<p class="tel">+45 35 36 16 00</p>
 						<p>
 							<a class="linktekst" href="mailto:info@thebarkingdog.dk">info@thebarkingdog.dk</a>
 						</p>
@@ -115,6 +115,9 @@ import MainLayout from '../mainlayout/MainLayout.astro'
 		animation-fill-mode: forwards;
 	}
 
+	.tel {
+		font-family: var(--p-font);
+	}
 	.linktekst {
 		font-family: var(--p-font);
 		font-size: var(--copy-web);

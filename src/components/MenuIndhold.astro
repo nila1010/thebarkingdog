@@ -1,16 +1,16 @@
 ---
-const { data } = Astro.props
+const { navndrink, pris, beskrivelse, tekst } = Astro.props
 ---
 
 <article>
 	<div>
 		<div class="flextitle">
-			<h2>{data.navndrink}</h2>
-			<h2>{data.pris}</h2>
+			<h2>{navndrink}</h2>
+			<h2>{pris}</h2>
 		</div>
-		<h3>{data.beskrivelse}</h3>
+		<h3>{beskrivelse}</h3>
 	</div>
-	<p>{data.tekst}</p>
+	<p>{tekst}</p>
 </article>
 
 <style>

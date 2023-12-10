@@ -8,15 +8,6 @@ const response1 = await fetch('https://vdmmsfhwyenonuczxxlg.supabase.co/rest/v1/
 })
 const data = await response1.json()
 
-const response2 = await fetch('https://vdmmsfhwyenonuczxxlg.supabase.co/rest/v1/menukort2', {
-	method: 'GET',
-	headers: {
-		apikey:
-			'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZkbW1zZmh3eWVub251Y3p4eGxnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDIwMjU3OTQsImV4cCI6MjAxNzYwMTc5NH0.o9ue87z_nRxD0pgEX3Dfl3tS4iG8BY_1Sao3mkZcugs'
-	}
-})
-const data2 = await response2.json()
-
 import MenuIndhold from './MenuIndhold.astro'
 ---
 
@@ -92,7 +83,7 @@ import MenuIndhold from './MenuIndhold.astro'
 	@media (max-width: 750px) {
 		section {
 			grid-row: 2;
-			margin: -60% auto 0 auto;
+			margin: 15px auto 0 auto;
 		}
 	}
 

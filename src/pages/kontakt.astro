@@ -116,6 +116,7 @@ import MainLayout from '../mainlayout/MainLayout.astro'
 	}
 
 	.linktekst {
+		font-family: var(--p-font);
 		font-size: var(--copy-web);
 	}
 
@@ -129,6 +130,10 @@ import MainLayout from '../mainlayout/MainLayout.astro'
 		gap: 100px;
 	}
 
+	.linkgrafik .grafik {
+		transform: rotate(180deg);
+	}
+
 	@keyframes show {
 		100% {
 			opacity: 100%;
@@ -139,7 +144,8 @@ import MainLayout from '../mainlayout/MainLayout.astro'
 		h1 {
 			line-height: 60px;
 		}
-		.linkitekst {
+		.linktekst {
+			font-family: var(--p-font);
 			font-size: var(--copy-tablet);
 		}
 	}
@@ -158,9 +164,23 @@ import MainLayout from '../mainlayout/MainLayout.astro'
 		}
 	}
 
-	@media (max-width: 500px) {
+	@media (max-width: 550px) {
 		h1 {
 			line-height: 40px;
+		}
+
+		.linktekst {
+			font-size: var(--copy-tablet);
+		}
+		.overskrift {
+			gap: 132px;
+		}
+		.linkgrafik {
+			gap: 20px;
+		}
+
+		.grafik {
+			width: 70px;
 		}
 	}
 </style>

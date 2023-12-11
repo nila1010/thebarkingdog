@@ -1,5 +1,5 @@
 ---
-const { active } = Astro.props
+const { title } = Astro.props
 ---
 
 <nav>
@@ -11,10 +11,9 @@ const { active } = Astro.props
 		<span></span>
 	</div>
 	<article class="navdispno">
-		<a class={active} href="/ombaren">Om Baren</a><a class={active} href="/booking">Booking</a><a
-			class={active}
-			href="/menu">Menukort</a
-		><a class={active} href="/kontakt">Kontakt</a>
+		<a class={title == 'Om baren' && 'active'} href="/ombaren">Om Baren</a><a href="/booking"
+			>Booking</a
+		><a href="/menu">Menukort</a><a href="/kontakt">Kontakt</a>
 	</article>
 </nav>
 

@@ -30,137 +30,139 @@ import MenuIndhold from './MenuIndhold.astro'
 			tekst="Right after you shot the sheriff, gunsmoke still hanging in the air, you open up your hipflask, take a sip of a Negroni, bite into a habanero and spit out the stalk.Enough is enough John Brown."
 		/>
 		<img id="next" src="/logo/pil.svg" alt="Næste side" />
-	</article>
-	<article class="slide">
-		<div>
-			<h1 class="colorh1">Coc</h1>
-			<h1>ktai</h1>
-			<h1>ls</h1>
-		</div>
-		<MenuIndhold
-			navndrink="Fiffi"
-			pris="129"
-			beskrivelse="Mexican rum, Pear, Lime, Agave, Coconut"
-			tekst="Snakeskin, forty degress heat and the only thing in hand part from some funku agardiente is a big, jucy....pear. You bite in to it and feel the juice drip down your cheeks. Like when we drink margaritas late at night."
-		/>
 
-		<MenuIndhold
-			navndrink="24 Carrots"
-			pris="129"
-			beskrivelse="Tequila, Umeshu, Super Carrot, Apricot"
-			tekst="They say Aarhus is the city of smiles. We went there with some tequila plums and carrots. Everyone was smiling. "
-		/>
+		<article class="slide">
+			<div>
+				<h1 class="colorh1">Coc</h1>
+				<h1>ktai</h1>
+				<h1>ls</h1>
+			</div>
+			<MenuIndhold
+				navndrink="Fiffi"
+				pris="129"
+				beskrivelse="Mexican rum, Pear, Lime, Agave, Coconut"
+				tekst="Snakeskin, forty degress heat and the only thing in hand part from some funku agardiente is a big, jucy....pear. You bite in to it and feel the juice drip down your cheeks. Like when we drink margaritas late at night."
+			/>
 
-		<MenuIndhold
-			navndrink="Spicy Negroni"
-			pris="129"
-			beskrivelse="Shoppen Gin, Vermut, Campari, Habanero Mezcal"
-			tekst="Right after you shot the sheriff, gunsmoke still hanging in the air, you open up your hipflask, take a sip of a Negroni, bite into a habanero and spit out the stalk.Enough is enough John Brown."
-		/>
-		<img id="next" src="/logo/pil.svg" alt="Næste side" />
-		<img id="prev" src="/logo/pil.svg" alt="Forrige side" />
+			<MenuIndhold
+				navndrink="24 Carrots"
+				pris="129"
+				beskrivelse="Tequila, Umeshu, Super Carrot, Apricot"
+				tekst="They say Aarhus is the city of smiles. We went there with some tequila plums and carrots. Everyone was smiling. "
+			/>
+
+			<MenuIndhold
+				navndrink="Spicy Negroni"
+				pris="129"
+				beskrivelse="Shoppen Gin, Vermut, Campari, Habanero Mezcal"
+				tekst="Right after you shot the sheriff, gunsmoke still hanging in the air, you open up your hipflask, take a sip of a Negroni, bite into a habanero and spit out the stalk.Enough is enough John Brown."
+			/>
+			<img id="next" src="/logo/pil.svg" alt="Næste side" />
+			<img id="prev" src="/logo/pil.svg" alt="Forrige side" />
+		</article>
+
+		<style>
+			section {
+				grid-column: 1;
+				grid-row: 1;
+				margin: 40rem 31rem 4rem 2rem;
+				max-width: 550px;
+				display: flex;
+				overflow: hidden;
+				scroll-behavior: smooth;
+				-webkit-overflow-scrolling: touch;
+			}
+			article {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				gap: 50px;
+				background-color: #fff5d7;
+				padding: 0 20px 80px 20px;
+				border-radius: 30px;
+				min-width: 100%;
+			}
+
+			h1 {
+				color: var(--background-color-primary);
+				line-height: 80px;
+			}
+			.colorh1 {
+				margin-top: 40px;
+				color: var(--text-color-alternativ);
+			}
+
+			#next {
+				position: absolute;
+				width: 8%;
+				bottom: 15px;
+				right: 30px;
+			}
+
+			#prev {
+				position: absolute;
+				width: 8%;
+				bottom: 15px;
+				right: 95px;
+				transform: rotate(180deg);
+			}
+
+			@media (max-width: 1200px) {
+				h1 {
+					line-height: 60px;
+				}
+				.colorh1 {
+					margin-top: 30px;
+				}
+			}
+
+			@media (max-width: 850px) {
+				section {
+					margin-right: 25rem;
+				}
+			}
+
+			@media (max-width: 700px) {
+				section {
+					max-width: 350px;
+				}
+			}
+
+			@media (max-width: 750px) {
+				section {
+					grid-row: 2;
+					margin: 15px auto 0 auto;
+				}
+			}
+
+			@media (max-width: 500px) {
+				h1 {
+					line-height: 40px;
+				}
+				.colorh1 {
+					margin-top: 20px;
+				}
+			}
+		</style>
+
+		<script>
+			const container = document.querySelector('.slider')
+
+			const slide = document.querySelector('.slide')
+
+			const next = document.querySelector('#next')
+
+			const prev = document.querySelector('#prev')
+
+			next.addEventListener('click', () => {
+				const slideWidth = slide.clientWidth
+				container.scrollLeft += slideWidth
+			})
+
+			prev.addEventListener('click', () => {
+				const slideWidth = slide.clientWidth
+				container.scrollLeft -= slideWidth
+			})
+		</script>
 	</article>
 </section>
-<style>
-	section {
-		grid-column: 1;
-		grid-row: 1;
-		margin: 40rem 31rem 4rem 2rem;
-		max-width: 550px;
-		display: flex;
-		overflow: hidden;
-		scroll-behavior: smooth;
-		-webkit-overflow-scrolling: touch;
-	}
-	article {
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		gap: 50px;
-		background-color: #fff5d7;
-		padding: 0 20px 80px 20px;
-		border-radius: 30px;
-		min-width: 100%;
-	}
-
-	h1 {
-		color: var(--background-color-primary);
-		line-height: 80px;
-	}
-	.colorh1 {
-		margin-top: 40px;
-		color: var(--text-color-alternativ);
-	}
-
-	#next {
-		position: absolute;
-		width: 8%;
-		bottom: 15px;
-		right: 30px;
-	}
-
-	#prev {
-		position: absolute;
-		width: 8%;
-		bottom: 15px;
-		right: 95px;
-		transform: rotate(180deg);
-	}
-
-	@media (max-width: 1200px) {
-		h1 {
-			line-height: 60px;
-		}
-		.colorh1 {
-			margin-top: 30px;
-		}
-	}
-
-	@media (max-width: 850px) {
-		section {
-			margin-right: 25rem;
-		}
-	}
-
-	@media (max-width: 700px) {
-		section {
-			max-width: 350px;
-		}
-	}
-
-	@media (max-width: 750px) {
-		section {
-			grid-row: 2;
-			margin: 15px auto 0 auto;
-		}
-	}
-
-	@media (max-width: 500px) {
-		h1 {
-			line-height: 40px;
-		}
-		.colorh1 {
-			margin-top: 20px;
-		}
-	}
-</style>
-
-<script>
-	const container = document.querySelector('.slider')
-
-	const slide = document.querySelector('.slide')
-
-	const next = document.querySelector('#next')
-
-	const prev = document.querySelector('#prev')
-
-	next.addEventListener('click', () => {
-		const slideWidth = slide.clientWidth
-		container.scrollLeft += slideWidth
-	})
-
-	prev.addEventListener('click', () => {
-		const slideWidth = slide.clientWidth
-		container.scrollLeft -= slideWidth
-	})
-</script>

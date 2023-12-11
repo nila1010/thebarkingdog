@@ -11,9 +11,22 @@ const { title } = Astro.props
 		<span></span>
 	</div>
 	<article class="navdispno">
-		<a class={title == 'Om baren' && 'active'} href="/ombaren">Om Baren</a><a href="/booking"
-			>Booking</a
-		><a href="/menu">Menukort</a><a href="/kontakt">Kontakt</a>
+		<a
+			class={title == 'Om baren| Uformel cocktailbar ved Sankt Hans Torv på Nørrebro' && 'active'}
+			href="/ombaren">Om Baren</a
+		>
+		<a
+			class={title == 'Booking | Uformel cocktailbar ved Sankt Hans Torv på Nørrebro' && 'active'}
+			href="/booking">Booking</a
+		>
+		<a
+			class={title == 'Menukort | Uformel cocktailbar ved Sankt Hans Torv på Nørrebro' && 'active'}
+			href="/menu">Menukort</a
+		>
+		<a
+			class={title == 'Kontakt| Uformel cocktailbar ved Sankt Hans Torv på Nørrebro' && 'active'}
+			href="/kontakt">Kontakt</a
+		>
 	</article>
 </nav>
 

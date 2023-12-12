@@ -22,6 +22,7 @@
 	--link-mobil: 16px;
 
 	/*Font*/
+	/*CSS property som viser "standard" font som devicet bruger*/
 	--h-font: 'midnight', sans-serif;
 	--p-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
 		'Helvetica Neue', sans-serif;

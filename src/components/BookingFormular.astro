@@ -117,11 +117,8 @@
 	}
 
 	@keyframes fade {
-		90% {
-			opacity: 0;
-		}
 		100% {
-			display: none;
+			height: 0;
 			opacity: 0;
 		}
 	}
@@ -169,7 +166,6 @@
 	document.querySelector('button').addEventListener('click', animation)
 
 	function animation() {
-		console.log('click')
 		document.querySelector('.indhold').classList.add('fade')
 		document.querySelector('.tak').classList.remove('dispno')
 		document.querySelector('.tak').classList.add('fadein')

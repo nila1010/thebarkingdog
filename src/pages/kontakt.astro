@@ -4,7 +4,7 @@ import MainLayout from '../mainlayout/MainLayout.astro'
 
 <MainLayout title="Kontakt | Uformel cocktailbar ved Sankt Hans Torv på Nørrebro">
 	<section>
-		<img class="baggrundimg" src="/kontakt.webp" alt="baggrunds billede" />
+		<img class="baggrundimg" src="/kontaktmobil.webp" alt="baggrunds billede" />
 		<article>
 			<div class="overskrift">
 				<div>
@@ -60,12 +60,10 @@ import MainLayout from '../mainlayout/MainLayout.astro'
 
 <style>
 	section {
-		max-height: 1200px;
-		overflow: hidden;
-		grid-row: 1;
-		grid-column: 1;
 		display: grid;
-		grid-template-columns: 2fr 1fr;
+		margin-top: 40px;
+		grid-template-columns: 1fr;
+		grid-row: 1;
 	}
 
 	article {
@@ -77,30 +75,30 @@ import MainLayout from '../mainlayout/MainLayout.astro'
 		grid-row: 1;
 		display: flex;
 		flex-direction: column;
-		gap: 50px;
+		gap: 0px;
 	}
 
 	h1 {
-		line-height: 80px;
+		line-height: 40px;
 	}
 
 	h2 {
 		color: var(--text-color-primary);
 	}
 	.baggrundimg {
-		margin-top: 13.7rem;
+		margin-top: 0;
+		grid-row: 2;
 		grid-column: 1/3;
-		grid-row: 1;
 	}
 
 	.grafik {
-		width: 150px;
+		width: 120px;
 	}
 
 	.overskrift {
 		margin-right: 8rem;
 		display: flex;
-		gap: 130px;
+		gap: 132px;
 	}
 
 	.text {
@@ -117,7 +115,7 @@ import MainLayout from '../mainlayout/MainLayout.astro'
 
 	.linktekst {
 		font-family: var(--p-font);
-		font-size: var(--copy-web);
+		font-size: var(--copy-tablet);
 		color: var(--link-color-hover);
 	}
 
@@ -128,7 +126,7 @@ import MainLayout from '../mainlayout/MainLayout.astro'
 
 	.linkgrafik {
 		display: flex;
-		gap: 54px;
+		gap: 20px;
 	}
 
 	.linkgrafik .grafik {
@@ -141,48 +139,45 @@ import MainLayout from '../mainlayout/MainLayout.astro'
 		}
 	}
 
-	@media (max-width: 1200px) {
+	@media (min-width: 500px) {
 		h1 {
 			line-height: 60px;
 		}
 		.linktekst {
-			font-family: var(--p-font);
-			font-size: var(--copy-tablet);
-		}
-	}
-
-	@media (max-width: 1000px) {
-		section {
-			margin-top: 40px;
-			grid-template-columns: 1fr;
-		}
-		article {
-			gap: 0;
-		}
-		.baggrundimg {
-			margin-top: 0;
-			grid-row: 2;
-			content: url('/kontaktmobil.webp');
-		}
-	}
-
-	@media (max-width: 550px) {
-		h1 {
-			line-height: 40px;
-		}
-
-		.linktekst {
-			font-size: var(--copy-tablet);
+			font-size: var(--copy-web);
 		}
 		.overskrift {
-			gap: 132px;
+			gap: 130px;
 		}
 		.linkgrafik {
-			gap: 20px;
+			gap: 54px;
 		}
 
 		.grafik {
-			width: 70px;
+			width: 150px;
+		}
+	}
+	@media (min-width: 1000px) {
+		section {
+			max-height: 1200px;
+			overflow: hidden;
+			grid-template-columns: 2fr 1fr;
+			grid-column: 1;
+		}
+
+		article {
+			gap: 50px;
+		}
+		.baggrundimg {
+			margin-top: 13.7rem;
+
+			grid-row: 1;
+			content: url('/kontakt.webp');
+		}
+	}
+	@media (min-width: 1200px) {
+		h1 {
+			line-height: 80px;
 		}
 	}
 </style>

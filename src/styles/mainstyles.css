@@ -65,35 +65,34 @@ img {
 
 h1 {
 	font-family: 'midnight', sans-serif;
-	font-size: var(--h1-web);
+	font-size: var(--h1-mobil);
 	color: var(--text-color-primary);
 }
 
 h2 {
 	font-family: var(--p-font);
-	font-size: var(--h2-web);
+	font-size: var(--h2-tablet);
 	font-weight: bold;
 	color: var(--background-color-primary);
 }
 
 h3 {
 	font-family: var(--p-font);
-	font-size: var(--h3-web);
+	font-size: var(--h3-tablet);
 	font-weight: bold;
 	color: var(--background-color-primary);
 }
 
 p {
 	font-family: var(--p-font);
-	font-size: var(--copy-web);
+	line-height: 22px;
 	color: var(--text-color-primary);
 	max-width: 65ch;
-	line-height: 30px;
 }
 
 a {
 	font-family: 'midnight', sans-serif;
-	font-size: var(--link-web);
+	font-size: var(--link-tablet);
 	color: var(--link-color-hover);
 }
 
@@ -101,38 +100,36 @@ a:hover {
 	text-decoration: underline;
 }
 
-@media (max-width: 1200px) {
+@media (min-width: 500px) {
 	h1 {
 		font-size: var(--h1-tablet);
-	}
-
-	h2 {
-		font-size: var(--h2-tablet);
-	}
-
-	h3 {
-		font-size: var(--h3-tablet);
 	}
 
 	p {
 		font-size: var(--copy-tablet);
 		line-height: 25px;
 	}
-	a {
-		font-size: var(--link-tablet);
-	}
 }
 
-@media (max-width: 500px) {
+@media (min-width: 1200px) {
 	h1 {
-		font-size: var(--h1-mobil);
+		font-size: var(--h1-web);
+	}
+
+	h2 {
+		font-size: var(--h2-web);
+	}
+
+	h3 {
+		font-size: var(--h3-web);
 	}
 
 	p {
-		line-height: 22px;
+		font-size: var(--copy-web);
+		line-height: 30px;
 	}
 
 	a {
-		font-size: var(--link-tablet);
+		font-size: var(--link-web);
 	}
 }

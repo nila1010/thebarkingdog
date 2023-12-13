@@ -39,7 +39,7 @@ const { over1, over2, text1, text2, text3, text4, link, linktekst, textboks, lin
 		grid-row: 1;
 		grid-column: 1;
 		display: grid;
-		grid-template-columns: 55% 45%;
+		grid-template-columns: 1fr;
 	}
 
 	article {
@@ -48,27 +48,27 @@ const { over1, over2, text1, text2, text3, text4, link, linktekst, textboks, lin
 		height: fit-content;
 		border-bottom-left-radius: 30px;
 		padding: 0 50px 50px 50px;
-		grid-column: 2/3;
-		grid-row: 1;
+		grid-column: 1;
 		z-index: 5;
 		display: flex;
 		flex-direction: column;
-		gap: 50px;
+		gap: 20px;
 	}
 
 	h1 {
-		line-height: 80px;
+		line-height: 40px;
 	}
 
 	.overskrift {
 		display: flex;
-		gap: 150px;
+		justify-content: flex-start;
+		gap: 60px;
 	}
 
 	.text {
 		display: flex;
 		flex-direction: column;
-		gap: 30px;
+		gap: 20px;
 		opacity: 0%;
 		animation-name: show;
 		animation-delay: 0.5s;
@@ -83,56 +83,36 @@ const { over1, over2, text1, text2, text3, text4, link, linktekst, textboks, lin
 		}
 	}
 
-	@media (max-width: 1200px) {
-		.linkitekst {
-			font-size: var(--copy-tablet);
+	@media (min-width: 500px) {
+		h1 {
+			line-height: 60px;
 		}
 
+		article {
+			gap: 50px;
+		}
+	}
+	@media (min-width: 750px) {
+		section {
+			grid-template-columns: 55% 45%;
+		}
+
+		article {
+			grid-row: 1;
+			grid-column: 2/3;
+			border-bottom-left-radius: 30px;
+			border-bottom-right-radius: 30px;
+		}
+	}
+
+	@media (min-width: 1000px) {
 		.overskrift {
 			gap: 100px;
 		}
 	}
-
-	@media (max-width: 1000px) {
-		.overskrift {
-			gap: 60px;
-		}
-	}
-
-	@media (max-width: 750px) {
-		section {
-			display: grid;
-			grid-template-columns: 1fr;
-		}
-
-		article {
-			grid-column: 1;
-			border-bottom-left-radius: 30px;
-			border-bottom-right-radius: 30px;
-		}
-		a {
-			text-align: center;
-		}
-
-		.overskrift {
-			justify-content: flex-end;
-		}
-	}
-
-	@media (max-width: 500px) {
+	@media (min-width: 1200px) {
 		h1 {
-			line-height: 50px;
-		}
-
-		article {
-			gap: 20px;
-		}
-		.overskrift {
-			justify-content: flex-start;
-		}
-
-		.text {
-			gap: 20px;
+			line-height: 80px;
 		}
 	}
 </style>

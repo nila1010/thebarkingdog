@@ -52,10 +52,11 @@
 			display: flex;
 			flex-direction: column;
 			gap: 10px;
+			text-align: center;
 		}
 
 		a {
-			font-size: 20px;
+			font-size: var(--link-mobile);
 		}
 
 		div {
@@ -70,12 +71,14 @@
 
 		.logofooter {
 			width: 332px;
+			order: 1;
 		}
 
 		.somelogo {
 			margin-top: 20px;
 			display: flex;
 			gap: 30px;
+			justify-content: center;
 		}
 
 		.logosome img {
@@ -87,32 +90,28 @@
 			margin-top: 15px;
 			display: flex;
 			gap: 40px;
+			justify-content: center;
 		}
 
-		@media (max-width: 689px) {
+		@media (min-width: 850px) {
 			article {
-				text-align: center;
+				text-align: left;
 			}
 
 			.visit {
-				justify-content: center;
+				justify-content: left;
 			}
 
-			.visit a {
-				font-size: var(--link-mobile);
+			a {
+				font-size: 20px;
 			}
 
 			.somelogo {
-				justify-content: center;
+				justify-content: left;
 			}
 
 			.logofooter {
-				order: 1;
-			}
-
-			.tlf {
-				font-family: var(--p-font);
-				font-size: var(--link-tablet);
+				order: 0;
 			}
 		}
 	</style>

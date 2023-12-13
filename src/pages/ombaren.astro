@@ -24,17 +24,12 @@ import Content from '../components/Content.astro'
 </MainLayout>
 
 <style>
-	section {
-		max-height: 1200px;
-		overflow: hidden;
-	}
 	.baggrundimg {
-		margin-top: 13.7rem;
-		grid-column: 1/3;
-		grid-row: 1;
+		margin: 0;
+		grid-row: 2;
 	}
 	.grafikimg {
-		max-width: 150px;
+		max-width: 80px;
 		/*position: absolute;
 		top: -23%;
 		left: 50px;
@@ -63,16 +58,20 @@ import Content from '../components/Content.astro'
 			transform: translate(450%, 330%) rotate(720deg) scale(1.8);
 		}
 	}
-
-	@media (max-width: 750px) {
-		.baggrundimg {
-			margin: 0;
-			grid-row: 2;
+	@media (min-width: 500px) {
+		.grafikimg {
+			max-width: 150px;
 		}
 	}
-	@media (max-width: 500px) {
-		.grafikimg {
-			max-width: 80px;
+	@media (min-width: 750px) {
+		section {
+			max-height: 1200px;
+			overflow: hidden;
+		}
+		.baggrundimg {
+			margin-top: 13.7rem;
+			grid-row: 1;
+			grid-column: 1/3;
 		}
 	}
 </style>

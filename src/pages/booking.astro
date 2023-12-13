@@ -29,9 +29,9 @@ import BookingFormular from '../components/BookingFormular.astro'
 	}
 
 	.baggrundimg {
-		margin-top: 13.7rem;
+		margin: 0;
+		grid-row: 2;
 		grid-column: 1/3;
-		grid-row: 1;
 	}
 	/* Vi har brug keyframes til at lave en animation på vores
 grafik img, ved at give animationen et navn, delay(for at sikre den 
@@ -40,7 +40,7 @@ hastighed gennem hele animationen, og aldrig stoppe. Derefter
 har vi sat animationen til at den skal scale halvvejs i animationen
 for at lave en puls effekt*/
 	.grafikimg {
-		max-width: 140px;
+		max-width: 80px;
 		animation-name: puls;
 		animation-delay: 0.5s;
 		animation-duration: 3s;
@@ -54,15 +54,15 @@ for at lave en puls effekt*/
 		}
 	}
 
-	@media (max-width: 750px) {
-		.baggrundimg {
-			margin: 0;
-			grid-row: 2;
+	@media (min-width: 500px) {
+		.grafikimg {
+			max-width: 140px;
 		}
 	}
-	@media (max-width: 500px) {
-		.grafikimg {
-			max-width: 80px;
+	@media (min-width: 750px) {
+		.baggrundimg {
+			margin-top: 13.7rem;
+			grid-row: 1;
 		}
 	}
 </style>

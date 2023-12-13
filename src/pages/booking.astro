@@ -33,7 +33,12 @@ import BookingFormular from '../components/BookingFormular.astro'
 		grid-column: 1/3;
 		grid-row: 1;
 	}
-
+	/* Vi har brug keyframes til at lave en animation på vores
+grafik img, ved at give animationen et navn, delay(for at sikre den 
+ikke starter for tidligt), en duration, samt den skal kører samme 
+hastighed gennem hele animationen, og aldrig stoppe. Derefter
+har vi sat animationen til at den skal scale halvvejs i animationen
+for at lave en puls effekt*/
 	.grafikimg {
 		max-width: 140px;
 		animation-name: puls;

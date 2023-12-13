@@ -1,3 +1,5 @@
+/*Vi har brugt variabler for at sikre konsistens på sitet
+og samtidig at gøre det nemt for os at rette i farver, fonte og størrelser*/
 :root {
 	/* Color styles */
 	--text-color-primary: #fff5d7;

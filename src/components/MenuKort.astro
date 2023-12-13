@@ -1,11 +1,16 @@
 ---
+/* Vi fetcher data fra SupaBase ved at fetche den url som databasen ligger på samt hvilken tabel
+der skal hentes data fra*/
 const response = await fetch('https://vdmmsfhwyenonuczxxlg.supabase.co/rest/v1/menukort', {
 	method: 'GET',
 	headers: {
+		/*For at få adgang til vores data skal vi have en apikey*/
 		apikey:
 			'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZkbW1zZmh3eWVub251Y3p4eGxnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDIwMjU3OTQsImV4cCI6MjAxNzYwMTc5NH0.o9ue87z_nRxD0pgEX3Dfl3tS4iG8BY_1Sao3mkZcugs'
 	}
 })
+/*Når vi har hentet data fra databasen laver vi en konstant som tage den data
+som ligger i json filen som vi kan bruge til at target det indhold vi skal bruge*/
 const data = await response.json()
 
 import MenuIndhold from './MenuIndhold.astro'
@@ -19,40 +24,39 @@ import MenuIndhold from './MenuIndhold.astro'
 			<h1>ls</h1>
 		</div>
 		{
+			/*Vi bruger map funktion for at få de enkelte drinks trukket ud af det array de kommer i
+		fra json filen*/
 			data.map((oneDrink) => {
+				/*Vi laver en if statement fordi vi kun vil have nogle
+				specifikke drinks*/
 				if (oneDrink.sidenr == 1) {
+					/*Vi returner komponenten MenuIndhold og sender det valgte data til komponenten så 
+					det kan indsættes. Via map funktionen bliver der retuneret det
+					antal drinks som matcher vores if statement*/
 					return <MenuIndhold data={oneDrink} />
 				}
 			})
 		}
 		<img id="next" src="/logo/pil.svg" alt="Næste side" />
 	</article>
+
 	<article class="slide">
 		<div>
 			<h1 class="colorh1">Coc</h1>
 			<h1>ktai</h1>
 			<h1>ls</h1>
 		</div>
-		<MenuIndhold
-			navndrink="Fiffi"
-			pris="129"
-			beskrivelse="Mexican rum, Pear, Lime, Agave, Coconut"
-			tekst="Snakeskin, forty degress heat and the only thing in hand part from some funku agardiente is a big, jucy....pear. You bite in to it and feel the juice drip down your cheeks. Like when we drink margaritas late at night."
-		/>
-
-		<MenuIndhold
-			navndrink="24 Carrots"
-			pris="129"
-			beskrivelse="Tequila, Umeshu, Super Carrot, Apricot"
-			tekst="They say Aarhus is the city of smiles. We went there with some tequila plums and carrots. Everyone was smiling. "
-		/>
-
-		<MenuIndhold
-			navndrink="Spicy Negroni"
-			pris="129"
-			beskrivelse="Shoppen Gin, Vermut, Campari, Habanero Mezcal"
-			tekst="Right after you shot the sheriff, gunsmoke still hanging in the air, you open up your hipflask, take a sip of a Negroni, bite into a habanero and spit out the stalk.Enough is enough John Brown."
-		/>
+		{
+			/*For at vi kan få vist forskellige drinks
+			på forskellige sider af vores menukort indsætter vi 
+			endnu en map funktion med de drinks som skal være på
+			næste side og tilpasser vores if statement*/
+			data.map((oneDrink) => {
+				if (oneDrink.sidenr == 2) {
+					return <MenuIndhold data={oneDrink} />
+				}
+			})
+		}
 		<img id="next" src="/logo/pil.svg" alt="Næste side" />
 		<img id="prev" src="/logo/pil.svg" alt="Forrige side" />
 	</article>
@@ -76,6 +80,10 @@ import MenuIndhold from './MenuIndhold.astro'
 			padding: 0 20px 80px 20px;
 			border-radius: 30px;
 			min-width: 100%;
+		}
+
+		article:nth-child(even) div:first-child {
+			text-align: right;
 		}
 
 		h1 {
@@ -141,6 +149,11 @@ import MenuIndhold from './MenuIndhold.astro'
 	</style>
 
 	<script>
+		/*For at få vores slide effekt til at virke på vores menukort
+		har vi tilføjet en eventListner til de forskellie knapper
+		og lavet en funktion som tjekker width af den container
+		som vi gerne vil slide og derefter vælger vi om den skal 
+		slide til højre eller venstre*/
 		const container = document.querySelector('.slider')
 
 		const slide = document.querySelector('.slide')

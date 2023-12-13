@@ -1,17 +1,19 @@
 ---
+/*Vi bruger astro.props til at fange den konstant og de
+data som er blevet sendt fra vores MenuKort komponent
+så vi kan sætte det ind i vores html*/
 const { data } = Astro.props
-console.log(data)
 ---
 
 <article>
 	<div>
 		<div class="flextitle">
-			<h2></h2>
-			<h2></h2>
+			<h2>{data.navndrink}</h2>
+			<h2>{data.pris}</h2>
 		</div>
-		<h3></h3>
+		<h3>{data.beskrivelse}</h3>
 	</div>
-	<p></p>
+	<p>{data.tekst}</p>
 </article>
 
 <style>

@@ -63,11 +63,10 @@ import MenuIndhold from './MenuIndhold.astro'
 
 	<style>
 		section {
-			grid-column: 1;
-			grid-row: 1;
-			margin: 40rem 31rem 4rem 2rem;
+			margin: 15px 10px 0 10px;
 			max-width: 550px;
 			display: flex;
+			justify-self: center;
 			overflow: hidden;
 			scroll-behavior: smooth;
 		}
@@ -88,10 +87,10 @@ import MenuIndhold from './MenuIndhold.astro'
 
 		h1 {
 			color: var(--background-color-primary);
-			line-height: 80px;
+			line-height: 40px;
 		}
 		.colorh1 {
-			margin-top: 40px;
+			margin-top: 20px;
 			color: var(--text-color-alternativ);
 		}
 
@@ -109,8 +108,7 @@ import MenuIndhold from './MenuIndhold.astro'
 			right: 95px;
 			transform: rotate(180deg);
 		}
-
-		@media (max-width: 1200px) {
+		@media (min-width: 500px) {
 			h1 {
 				line-height: 60px;
 			}
@@ -119,31 +117,30 @@ import MenuIndhold from './MenuIndhold.astro'
 			}
 		}
 
-		@media (max-width: 850px) {
+		@media (min-width: 750px) {
 			section {
-				margin-right: 25rem;
+				grid-row: 1;
+				grid-column: 1;
+				margin: 40rem auto 4rem 2rem;
+				max-width: 400px;
+			}
+		}
+		@media (min-width: 1000px) {
+			section {
+				max-width: 500px;
 			}
 		}
 
-		@media (max-width: 700px) {
+		@media (min-width: 1200px) {
 			section {
-				max-width: 350px;
+				max-width: 650px;
+				margin: 40rem auto 4rem 3rem;
 			}
-		}
-
-		@media (max-width: 750px) {
-			section {
-				grid-row: 2;
-				margin: 15px auto 0 auto;
-			}
-		}
-
-		@media (max-width: 500px) {
 			h1 {
-				line-height: 40px;
+				line-height: 80px;
 			}
 			.colorh1 {
-				margin-top: 20px;
+				margin-top: 40px;
 			}
 		}
 	</style>

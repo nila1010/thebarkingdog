@@ -1,4 +1,13 @@
 ---
+const response = await fetch('https://vdmmsfhwyenonuczxxlg.supabase.co/rest/v1/menukort', {
+	method: 'GET',
+	headers: {
+		apikey:
+			'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZkbW1zZmh3eWVub251Y3p4eGxnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDIwMjU3OTQsImV4cCI6MjAxNzYwMTc5NH0.o9ue87z_nRxD0pgEX3Dfl3tS4iG8BY_1Sao3mkZcugs'
+	}
+})
+const data = await response.json()
+
 import MenuIndhold from './MenuIndhold.astro'
 ---
 
@@ -9,26 +18,13 @@ import MenuIndhold from './MenuIndhold.astro'
 			<h1>ktai</h1>
 			<h1>ls</h1>
 		</div>
-		<MenuIndhold
-			navndrink="Fiffi"
-			pris="129"
-			beskrivelse="Mexican rum, Pear, Lime, Agave, Coconut"
-			tekst="Snakeskin, forty degress heat and the only thing in hand part from some funku agardiente is a big, jucy....pear. You bite in to it and feel the juice drip down your cheeks. Like when we drink margaritas late at night."
-		/>
-
-		<MenuIndhold
-			navndrink="24 Carrots"
-			pris="129"
-			beskrivelse="Tequila, Umeshu, Super Carrot, Apricot"
-			tekst="They say Aarhus is the city of smiles. We went there with some tequila plums and carrots. Everyone was smiling. "
-		/>
-
-		<MenuIndhold
-			navndrink="Spicy Negroni"
-			pris="129"
-			beskrivelse="Shoppen Gin, Vermut, Campari, Habanero Mezcal"
-			tekst="Right after you shot the sheriff, gunsmoke still hanging in the air, you open up your hipflask, take a sip of a Negroni, bite into a habanero and spit out the stalk.Enough is enough John Brown."
-		/>
+		{
+			data.map((oneDrink) => {
+				if (oneDrink.sidenr == 1) {
+					return <MenuIndhold data={oneDrink} />
+				}
+			})
+		}
 		<img id="next" src="/logo/pil.svg" alt="Næste side" />
 	</article>
 	<article class="slide">

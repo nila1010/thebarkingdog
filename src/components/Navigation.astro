@@ -34,154 +34,159 @@ const { title } = Astro.props
 	nav {
 		display: flex;
 		background-color: var(--background-color-primary);
-		padding: 30px 50px 0 50px;
 		justify-content: space-between;
 	}
-
-	article {
-		display: flex;
-		gap: 40px;
-		height: fit-content;
-	}
-
 	img {
 		aspect-ratio: 120/175.85;
-		width: 200px;
+		margin: 20px;
+		width: 100px;
+	}
+	article {
+		position: absolute;
+		width: 100%;
+		height: 480px;
+		z-index: 10;
+		padding-top: 80px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1px;
+		background-color: #fff5d7;
+		animation-name: falling_kf;
+		animation-duration: 0.8s;
+		animation-fill-mode: backwards;
+		animation-timing-function: ease-in-out;
+	}
+
+	.navdispno {
+		display: none;
 	}
 
 	a {
-		font-size: 35px;
+		font-size: 60px;
 	}
 
 	.active {
 		text-decoration: underline;
 	}
 
-	@media (max-width: 1200px) {
-		a {
-			font-size: 30px;
+	/*BURGER MENU*/
+
+	#burger {
+		display: block;
+		width: 50px;
+		height: 60px;
+		position: relative;
+		transition: 0.5s ease-in-out;
+		z-index: 11;
+		margin: 10px 20px;
+	}
+
+	#burger span {
+		display: block;
+		position: absolute;
+		height: 5px;
+		width: 100%;
+		border-radius: 5px;
+		background: #c46259;
+		transition: 0.25s ease-in-out;
+	}
+
+	#burger span:nth-child(1) {
+		top: 10px;
+	}
+
+	#burger span:nth-child(2),
+	#burger span:nth-child(3) {
+		top: 25px;
+	}
+
+	#burger span:nth-child(4) {
+		top: 40px;
+	}
+
+	#burger.open span:nth-child(1) {
+		top: 15px;
+		width: 0%;
+		left: 50%;
+	}
+
+	#burger.open span:nth-child(2) {
+		transform: rotate(45deg);
+		top: 26px;
+	}
+
+	#burger.open span:nth-child(3) {
+		transform: rotate(-45deg);
+		top: 26px;
+	}
+
+	#burger.open span:nth-child(4) {
+		top: 15px;
+		width: 0%;
+		left: 50%;
+	}
+
+	@keyframes falling_kf {
+		from {
+			transform: translate(0, -100%);
+		}
+
+		to {
+			transform: translate(0);
 		}
 	}
 
-	@media (max-width: 1000px) {
+	@media (min-width: 750px) {
+		nav {
+			padding: 30px 50px 0 50px;
+		}
+
 		article {
-			gap: 30px;
+			position: relative;
+			gap: 20px;
+			width: auto;
+			height: fit-content;
+			padding-top: 30px;
+			flex-direction: row;
+			background-color: transparent;
+			animation-name: none;
+		}
+		.navdispno {
+			display: flex;
 		}
 
 		img {
 			width: 150px;
 		}
+
+		a {
+			font-size: 22px;
+		}
+
+		#burger {
+			display: none;
+		}
+	}
+	@media (min-width: 900px) {
 		a {
 			font-size: 25px;
 		}
 	}
-	@media (max-width: 900px) {
+	@media (min-width: 1000px) {
 		article {
 			gap: 30px;
 		}
 		a {
-			font-size: 20px;
+			font-size: 30px;
+		}
+		img {
+			width: 200px;
 		}
 	}
-
-	@media (max-width: 750px) {
-		img {
-			margin: 20px;
-			width: 100px;
-		}
-		/*BURGER MENU*/
-		nav {
-			padding: 0;
-		}
-		.navdispno {
-			display: none;
-		}
-
-		article {
-			background-color: aqua;
-			position: absolute;
-			width: 100%;
-			height: 480px;
-
-			z-index: 10;
-			padding-top: 80px;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			gap: 1px;
-			background-color: #fff5d7;
-			animation-name: falling_kf;
-			animation-duration: 0.8s;
-			animation-fill-mode: backwards;
-			animation-timing-function: ease-in-out;
-		}
+	@media (min-width: 1200px) {
 		a {
-			font-size: 60px;
-		}
-
-		@keyframes falling_kf {
-			from {
-				transform: translate(0, -100%);
-			}
-
-			to {
-				transform: translate(0);
-			}
-		}
-
-		#burger {
-			display: block;
-			width: 50px;
-			height: 60px;
-			position: relative;
-			transition: 0.5s ease-in-out;
-			z-index: 11;
-			margin: 10px 20px;
-		}
-
-		#burger span {
-			display: block;
-			position: absolute;
-			height: 5px;
-			width: 100%;
-			border-radius: 5px;
-			background: #c46259;
-			transition: 0.25s ease-in-out;
-		}
-
-		#burger span:nth-child(1) {
-			top: 10px;
-		}
-
-		#burger span:nth-child(2),
-		#burger span:nth-child(3) {
-			top: 25px;
-		}
-
-		#burger span:nth-child(4) {
-			top: 40px;
-		}
-
-		#burger.open span:nth-child(1) {
-			top: 15px;
-			width: 0%;
-			left: 50%;
-		}
-
-		#burger.open span:nth-child(2) {
-			transform: rotate(45deg);
-			top: 26px;
-		}
-
-		#burger.open span:nth-child(3) {
-			transform: rotate(-45deg);
-			top: 26px;
-		}
-
-		#burger.open span:nth-child(4) {
-			top: 15px;
-			width: 0%;
-			left: 50%;
+			font-size: 35px;
 		}
 	}
 </style>

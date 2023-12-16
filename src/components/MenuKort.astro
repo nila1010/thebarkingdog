@@ -57,8 +57,23 @@ import MenuIndhold from './MenuIndhold.astro'
 				}
 			})
 		}
-		<img id="next" src="/logo/pil.svg" alt="Næste side" />
+		<img id="next2" src="/logo/pil.svg" alt="Næste side" />
 		<img id="prev" src="/logo/pil.svg" alt="Forrige side" />
+	</article>
+
+	<article class="slide">
+		<div>
+			<h1 class="colorh1">B</h1>
+			<h1>eer</h1>
+		</div>
+		{
+			data.map((oneDrink) => {
+				if (oneDrink.sidenr == 3) {
+					return <MenuIndhold data={oneDrink} />
+				}
+			})
+		}
+		<img id="prev2" src="/logo/pil.svg" alt="Forrige side" />
 	</article>
 
 	<style>
@@ -94,14 +109,16 @@ import MenuIndhold from './MenuIndhold.astro'
 			color: var(--text-color-alternativ);
 		}
 
-		#next {
+		#next,
+		#next2 {
 			position: absolute;
 			width: 7%;
 			bottom: 15px;
 			right: 30px;
 		}
 
-		#prev {
+		#prev,
+		#prev2 {
 			position: absolute;
 			width: 7%;
 			bottom: 15px;
@@ -109,10 +126,12 @@ import MenuIndhold from './MenuIndhold.astro'
 			transform: rotate(180deg);
 		}
 
-		#prev:hover {
+		#prev:hover,
+		#prev2:hover {
 			transform: rotate(180deg) scale(1.1);
 		}
-		#next:hover {
+		#next:hover,
+		#next2:hover {
 			transform: scale(1.1);
 		}
 		@media (min-width: 500px) {
@@ -163,8 +182,10 @@ import MenuIndhold from './MenuIndhold.astro'
 		const slide = document.querySelector('.slide')
 
 		const next = document.querySelector('#next')
+		const next2 = document.querySelector('#next2')
 
 		const prev = document.querySelector('#prev')
+		const prev2 = document.querySelector('#prev2')
 
 		next.addEventListener('click', () => {
 			const slideWidth = slide.clientWidth
@@ -172,6 +193,16 @@ import MenuIndhold from './MenuIndhold.astro'
 		})
 
 		prev.addEventListener('click', () => {
+			const slideWidth = slide.clientWidth
+			container.scrollLeft -= slideWidth
+		})
+
+		next2.addEventListener('click', () => {
+			const slideWidth = slide.clientWidth
+			container.scrollLeft += slideWidth
+		})
+
+		prev2.addEventListener('click', () => {
 			const slideWidth = slide.clientWidth
 			container.scrollLeft -= slideWidth
 		})
